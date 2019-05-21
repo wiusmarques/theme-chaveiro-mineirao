@@ -1,4 +1,19 @@
 url = "/"
 layout = "layout"
+
+[products]
 ==
-<p>HOME</p>
+<h1>HOME</h1>
+
+{{ products.products }}
+{% for product in products %}
+{{ dump(product) }}
+{% endfor %}
+
+{% for product in products %}
+<p>aaaaaaa</p>
+    <li>{{ product.neme }}</li>
+{% endfor %}
+<p>
+    Hello World
+</p>
