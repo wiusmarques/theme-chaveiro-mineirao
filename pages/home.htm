@@ -5,7 +5,7 @@ layout = "layout"
 ==
 <h1>HOME</h1>
 
-{{ products.products }}
+{{ dump(products.products) }}
 {% for product in products %}
 {{ dump(product) }}
 {% endfor %}
