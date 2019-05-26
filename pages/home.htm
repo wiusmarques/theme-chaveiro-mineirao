@@ -4,16 +4,10 @@ layout = "layout"
 [products]
 ==
 <h1>HOME</h1>
-
-{{ dump(products.products) }}
-{% for product in products %}
-{{ dump(product) }}
-{% endfor %}
+{% set products = products.products %}
 
 {% for product in products %}
-<p>aaaaaaa</p>
-    <li>{{ product.neme }}</li>
+{{ product }}
+<br><br><br><br><br><br>
+<li>{{ product.name }}</li>
 {% endfor %}
-<p>
-    Hello World
-</p>
