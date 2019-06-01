@@ -8,6 +8,11 @@ layout = "layout"
 
 {% for product in products %}
 {{ product }}
+{% for image in product.image_product %}
+
+<img src="{{ image.getPath() }}" alt="Imagem não encontrada!">
+
+{% endfor %}
 <br><br><br><br><br><br>
 <li>{{ product.name }}</li>
 {% endfor %}
