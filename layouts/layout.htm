@@ -6,13 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google-site-verification" content="_BIrbfQt5RYn8yXaiGmchFGRvi3CW9MxSK5aPQYmFLE" />
-    <title>Document</title>
+
+    {# Inserção do estilo específico de cada página #}
+    {% set cssPath = "assets/css/" ~ this.page.styleName %}
+    <link rel="stylesheet" type="text/css" href="{{ cssPath |theme }}">
+    {# Inserção do estilo específico de cada página #}
+
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/css/common.min.css?v=1.0.0'|theme }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/css/swiper-4.5.min.css?v=1.0.0'|theme }}">
+
+    <title>{{ this.page.title }}</title>
 </head>
 <body>
+
     {% partial 'header' %}
     <main>
         {% page %}
     </main> 
+
+    {% partial 'modal-whatsapp' %}
+
     {% partial 'footer' %}
+
 </body>
+
+
+<script src="{{ 'assets/js/swiper-4.5.0.min.js?v=1.0.0'|theme }}"></script>
+<script src="{{ 'assets/js/common.min.js?v=1.0.0'|theme }}"></script>
+
 </html>
