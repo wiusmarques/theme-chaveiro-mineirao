@@ -7,8 +7,6 @@ title = "Home - Chaveiro Mineirão"
 [banners]
 ==
 
-
-
 <section class="body">
     
     <div class="container">
@@ -36,54 +34,45 @@ title = "Home - Chaveiro Mineirão"
     </div>
 </section>
 
+
+
 <section class="container-services_title">
-    <h1 class="w-100 text-center">Exija sempre o melhor</h1>
+    <h1 class="w-100 text-center">{{ 'Exija sempre o melhor'|contenttext('Site | Home', true, 'Título da sessão') }}</h1>
 </section>
 
 <section class="container-services">
-
     <div class="container-services-card">
-        <h1>Produtos</h1>
-        <p>Vejas nossa variedade de produtos, peços e promoções. Possuimos um grande quantidade de produtos e
-            esperando por você!</p>
-        <a class="btn btn-cotacao btn-cotacao-home" href="produtos.html">Quero Conhecer</a>
+        <h1>{{ 'Produtos'|contenttext('Site | Home', true, 'Título da sessão Produtos') }}</h1>
+        
+        <p>
+        {{'Vejas nossa variedade de produtos, peços e promoções. Possuimos um grande quantidade de produtos e esperando por você!'|contenttext('Site | Home', true, 'Descrição da sessão de Produtos')}}
+        </p>
+        <a class="btn btn-cotacao btn-cotacao-home" href="{{ 'produtos'|page }}">Quero Conhecer</a>
         <div class="container-services-card-background container-services-card-background-products">
 
         </div>
     </div>
     <div class="container-services-card">
-        <h1>Serviços</h1>
-        <p>Solicite um orçamento sem compromisso, há uma variedade de serviços disponíveis para você, clique e
-            confira</p>
-        <a class="btn btn-cotacao btn-cotacao-home" href="servicos.html">Lista completa</a>
+        
+        <h1>{{ 'Serviços'|contenttext('Site | Home', true, 'Título da sessão Serviços') }}</h1>
+        <p>
+            {{ 'Solicite um orçamento sem compromisso, há uma variedade de serviços disponíveis para você, clique e
+            confira'|contenttext('Site | Home', true, 'Descrição da sessão Serviços') }}
+            </p>
+        <a class="btn btn-cotacao btn-cotacao-home" href="{{ 'servicoes'|page }}">Lista completa</a>
 
         <div class="container-services-card-background container-services-card-background-services">
 
         </div>
     </div>
     <div class="container-services-card">
-
-        <h1>Contato</h1>
-        <p>Duvidar em como nos envontrar, clique abaixo e deixe nos deixer traze-lo até aqui!</p>
+        
+        <h1>{{ 'Contato'|contenttext('Site | Home', true, 'Título da sessão Contato') }}</h1>
+        <p>{{ 'Duvidar em como nos envontrar, clique abaixo e deixe nos deixer traze-lo até aqui!'|contenttext('Site | Home', true, 'Descrição da sessão Contato') }}</p>
         <a class="btn btn-cotacao btn-cotacao-home" href="contato.html">Me leve até lá</a>
         <div class="container-services-card-background container-services-card-background-location">
 
         </div>
     </div>
+    
 </section>
-
-{# <h1>HOME</h1>
-{% set products = products.products %}
-
-{% for product in products %}
-{{ product }}
-{% for image in product.image_product %}
-
-<img src="{{ image.getPath() }}" alt="Imagem não encontrada!">
-
-{% endfor %}
-<br><br><br><br><br><br>
-<li>{{ product.name }}</li>
-{% endfor %}
-
-#}

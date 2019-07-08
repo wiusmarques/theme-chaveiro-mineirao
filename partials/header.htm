@@ -1,7 +1,7 @@
 ==
 <section class="header header-fixed">
 
-    <a href="index.html">
+    <a href="{{ ''|page }}">
         <div class="header-logo">
             <span>Chaveiro</span>
             <span>Mineirão</span>
@@ -11,25 +11,25 @@
     <div class="container header">
         <ul class="header-menu">
             <li class="header-menu__list">
-                <a href="index.html"><span>Home</span></a>
+                <a href="{{ ''|page }}"><span>{{ ''|contenttext('Site | Header', true, 'Texto de menu | Home') }}</span></a>
             </li>
             <li class="header-menu__list">
-                <a href="produtos.html"><span>Produtos</span></a>
+                <a href="{{ 'produtos'|page }}"><span>{{ 'Produtos'|contenttext('Site | Header', true, 'Texto de menu | Produts') }}</span></a>
             </li>
             <li class="header-menu__list">
-                <a href="servicos.html"><span>Serviços</span></a>
+                <a href="{{ 'servicos'|page }}"><span>{{ 'Serviços'|contenttext('Site | Header', true, 'Texto de menu | Serviços') }}</span></a>
             </li>
             <li class="header-menu__list">
-                <a href="contato.html"><span>Contato</span></a>
+                <a href="{{ 'contato'|page }}"><span>{{ 'Contato'|contenttext('Site | Header', true, 'Texto de menu | Contato') }}</span></a>
             </li>
             <li class="header-menu__list">
-                <a href="sobre.html"><span>Sobre</span></a>
+                <a href="{{ 'sobre'|page }}"><span>{{ 'Sobre'|contenttext('Site | Header', true, 'Texto de menu | Sobre') }}</span></a>
             </li>
         </ul>
     </div>
 
     <div class="header-company">
-            CHAVEIRO MINEIRÃO - Atendimento 24H
+        {{ 'CHAVEIRO MINEIRÃO - Atendimento 24H'|contenttext('Site | Header', true, 'Texto em destaque do HEADER') }}
     </div>
 </section>
 <section class="header header-mobile header-fixed">
@@ -39,7 +39,7 @@
     </div>
 
     <div class="header-company">
-        Chaveiro Mineirão
+        {{ 'Chaveiro Mineirão'|contenttext('Site | Header', true, 'Texto em destaque do HEADER MOBILE') }}
     </div>
 </section>
 
@@ -66,21 +66,22 @@
           but hey, it's pure CSS magic.
           -->
         <ul class="menu">
-            <a href="index.html">
-                <li class="menu-item">Home</li>
+            <a href="{{ ''|page }}">
+                <li class="menu-item">{{ ''|contenttext('Site | Header', true, 'Texto de menu | Home') }}</li>
             </a>
-            <a href="produtos.html">
-                <li class="menu-item">Produtos</li>
+            <a href="{{ 'produtos'|page }}">
+                <li class="menu-item">{{ 'Produtos'|contenttext('Site | Header', true, 'Texto de menu | Produts') }}</li>
             </a>
-            <a href="servicos.html">
-                <li class="menu-item">Serviços</li>
+            <a href="{{ 'servicos'|page }}">
+                <li class="menu-item">{{ 'Serviços'|contenttext('Site | Header', true, 'Texto de menu | Serviços') }}</li>
             </a>
-            <a href="contato.html">
-                <li class="menu-item">Contato</li>
+            <a href="{{ 'contato'|page }}">
+                <li class="menu-item">{{ 'Contato'|contenttext('Site | Header', true, 'Texto de menu | Contato') }}</li>
             </a>
-            <a href="sobre.html">
-                <li class="menu-item">Sobre</li>
+            <a href="{{ 'sobre'|page }}">
+                <li class="menu-item">{{ 'Sobre'|contenttext('Site | Header', true, 'Texto de menu | Sobre') }}</li>
             </a>
         </ul>
     </div>
 </nav>
+
