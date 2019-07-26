@@ -8,6 +8,10 @@
     <meta name="google-site-verification" content="_BIrbfQt5RYn8yXaiGmchFGRvi3CW9MxSK5aPQYmFLE" />
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     
+    {% if this.page.id == 'produtos' %}
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    {% endif %}
+    
     {# Inserção do estilo específico de cada página #}
     {% set cssPath = "assets/css/" ~ this.page.styleName %}
     <link rel="stylesheet" type="text/css" href="{{ cssPath |theme }}">

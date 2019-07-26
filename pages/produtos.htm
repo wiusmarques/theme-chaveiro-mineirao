@@ -1,0 +1,45 @@
+url = "/produtos"
+layout = "layout"
+styleName = "produtos.css"
+
+title = "Promoções e Produtos Chaveiro Mineirao"
+
+[products]
+==
+<section class="body">
+    <div class="container container-busca">
+        <div class="container-conteudo">
+            <div class="form-busca">
+                <form action="#">
+                    <input class="form-busca-input" type="text" placeholder="Protuto">
+                    <button class="form-busca-button" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="container-conteudo">
+            <div class="container-produtos">
+
+                {% for prducts in products.products|batch(3) %}
+                <div class="row">
+                    {% for product in prducts %}
+                    <div class="card">
+                        <div class="card-product_title">
+                            <p class="card-product_name">{{ product.name }}</p>
+                        </div>
+                        <div class="card-image">
+                            <img src="{{ product.primary_image.getPath() }}" alt="">
+                        </div>
+                        <div class="card-product_information">
+
+                            <p class="card-product_price"><span>Por apenas </span>R${{ product.value }}</p>
+                        </div>
+                        <button type="button" class="card-product_button">COMPRAR</button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+</section>
