@@ -20,26 +20,29 @@ title = "Promoções e Produtos Chaveiro Mineirao"
     <div class="container ">
         <div class="container-conteudo">
             <div class="container-produtos">
+                {% if products.products|length %}
+                    {% for prducts in products.products|batch(3) %}
+                    <div class="row">
+                        {% for product in prducts %}
+                        <div class="card">
+                            <div class="card-product_title">
+                                <p class="card-product_name">{{ product.name }}</p>
+                            </div>
+                            <div class="card-image">
+                                <img src="{{ product.primary_image.getPath() }}" alt="">
+                            </div>
+                            <div class="card-product_information">
 
-                {% for prducts in products.products|batch(3) %}
-                <div class="row">
-                    {% for product in prducts %}
-                    <div class="card">
-                        <div class="card-product_title">
-                            <p class="card-product_name">{{ product.name }}</p>
+                                <p class="card-product_price"><span>Por apenas </span>R${{ product.value }}</p>
+                            </div>
+                            <button type="button" class="card-product_button">COMPRAR</button>
                         </div>
-                        <div class="card-image">
-                            <img src="{{ product.primary_image.getPath() }}" alt="">
-                        </div>
-                        <div class="card-product_information">
-
-                            <p class="card-product_price"><span>Por apenas </span>R${{ product.value }}</p>
-                        </div>
-                        <button type="button" class="card-product_button">COMPRAR</button>
+                        {% endfor %}
                     </div>
                     {% endfor %}
-                </div>
-                {% endfor %}
+                {% else %}
+                Aguarde, estamos preparando essa área para você!
+                {% endif %}
             </div>
         </div>
 </section>
