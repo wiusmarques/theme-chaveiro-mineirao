@@ -6,12 +6,20 @@ title = "Promoções e Produtos Chaveiro Mineirao"
 
 [products]
 ==
+
 <section class="body">
     <div class="container container-busca">
         <div class="container-conteudo">
             <div class="form-busca">
                 <form action="#">
-                    <input class="form-busca-input" type="text" placeholder="Protuto">
+                    <input class="form-busca-input" list="browsers" name="search" placeholder="Protuto">
+                    <datalist id="browsers">
+                        <option value="Internet Explorer">
+                        <option value="Firefox">
+                        <option value="Chrome">
+                        <option value="Opera">
+                        <option value="Safari">
+                    </datalist>
                     <button class="form-busca-button" type="submit">Buscar</button>
                 </form>
             </div>
