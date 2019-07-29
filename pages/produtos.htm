@@ -12,13 +12,12 @@ title = "Promoções e Produtos Chaveiro Mineirao"
         <div class="container-conteudo">
             <div class="form-busca">
                 <form action="#">
-                    <input class="form-busca-input" list="browsers" name="search" placeholder="Protuto">
+                    <input class="form-busca-input" {% if products.filters.search is not empty  %} value="{{ products.filters.search }}" {% endif %}list="browsers" name="search" placeholder="Protuto">
                     <datalist id="browsers">
-                        <option value="Internet Explorer">
-                        <option value="Firefox">
-                        <option value="Chrome">
-                        <option value="Opera">
-                        <option value="Safari">
+                        {% for c in products.categories %}
+                        <option value="{{ c.name }}">
+                        {% endfor %}
+
                     </datalist>
                     <button class="form-busca-button" type="submit">Buscar</button>
                 </form>
