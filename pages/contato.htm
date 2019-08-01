@@ -22,8 +22,9 @@ title = "Chaveiro Mineirão"
         <h2>Telefones</h2>
         {% for unit in units.units %}
             {% for c in unit.contacts %}
+                {% set link = c.value|replace_regex('/[^0-9+]/', '') %}
                 <p class="contact-phone">
-                    <a class="btn btn-phone" href="tel:0{{ c.value|replace({'(': '', ')': '', ' ': '', '-': ''}) }}">{{ c.value }}</a>
+                    <a class="btn btn-phone" href="tel:0{{ link }}">{{ c.value }}</a>
                 </p>
             {% endfor %}
         {% endfor %}
