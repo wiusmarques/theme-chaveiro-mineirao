@@ -1,7 +1,7 @@
 ==
 
 <section class="container footer-extras">
-    {% if bodyClass != "contato" %}
+    {% if this.page.id != "contato" %}
     <div class="footer-extras-container">
         <div class="footer-extras-item">
             <h3>Acesso rápido</h3>
@@ -23,12 +23,17 @@
         
         <div class="footer-extras-item">
             <h3>{{ 'Onde estamos'|contenttext('Site | Footer', true, 'Título do mapa') }}</h3>
+            {% if this.page.id == "home" %}
+            <a href="{{ 'contato'|page }}">
+                <img src="{{ 'assets/img/map_fake.jpg'|theme }}" alt="">
+            </a>
+            {% else %}
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156.2683001329838!2d-43.96683679051816!3d-19.820619095227492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa68fdc3b1aef0d%3A0x7f89a9a6227bb8dc!2sChaveiro+Mineir%C3%A3o+-+Jair+atendimento+24+Horas!5e0!3m2!1spt-BR!2sbr!4v1557111661331!5m2!1spt-BR!2sbr&zoom=9" width="100%" frameborder="0" style="border:0" style="z-index:40" allowfullscreen></iframe>
+            {% endif %}
         </div>
-        
+     {% endif %}   
         
     </div>
-    {% endif %}
     <div class="container-copyright">
         <p>&copy; 2019 Desenvolvido por <a class="container-copyright-link" href="https://stiapp.com.br">stiapp.com.br</a><p>
     </div>
