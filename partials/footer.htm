@@ -7,16 +7,16 @@
             <h3>Acesso rápido</h3>
             <ul>
                 <li>
-                    <a class="footer-extras_link" href="produtos.html">{{ 'Produtos'|contenttext('Site | Header', true, 'Texto de menu | Produtos') }}</a>
+                    <a class="footer-extras_link" href="{{ 'produtos'|page }}">{{ 'Produtos'|contenttext('Site | Header', true, 'Texto de menu | Produtos') }}</a>
                 </li>
                 <li>
-                    <a class="footer-extras_link" href="servicos.html">{{ 'Serviços'|contenttext('Site | Header', true, 'Texto de menu | Serviços') }}</a>
+                    <a class="footer-extras_link" href="{{ 'servicos'|page }}">{{ 'Serviços'|contenttext('Site | Header', true, 'Texto de menu | Serviços') }}</a>
                 </li>
                 <li>
-                    <a class="footer-extras_link" href="contato.html">{{ 'Contato'|contenttext('Site | Header', true, 'Texto de menu | Contato') }}</a>
+                    <a class="footer-extras_link" href="{{ 'Contato'|page }}">{{ 'Contato'|contenttext('Site | Header', true, 'Texto de menu | Contato') }}</a>
                 </li>
                 <li>
-                    <a class="footer-extras_link" href="sobre.html">{{ 'Sobre'|contenttext('Site | Header', true, 'Texto de menu | Sobre') }}</a>
+                    <a class="footer-extras_link" href="{{ 'Sobre'|page }}">{{ 'Sobre'|contenttext('Site | Header', true, 'Texto de menu | Sobre') }}</a>
                 </li>
             </ul>
         </div>
@@ -50,10 +50,11 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper footer-contact-swiper__wrapper">
                 <!-- Slides -->
-                <a class="swiper-slide">(31) 99468-0534</a>
-                <a class="swiper-slide">(31) 3451-5859</a>
-                <a class="swiper-slide">(31) 99999-9999</a>
-
+                {% for u in units.units %}
+                    {% for c in u.contacts %}
+                        <a class="swiper-slide" href="tel:0{{ c.value|replace({'(': '', ')': '', ' ': '', '-': ''}) }}">{{ c.value }}</a>
+                    {% endfor %}
+                {% endfor %}
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>

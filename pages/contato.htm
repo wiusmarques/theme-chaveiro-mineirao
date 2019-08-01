@@ -20,15 +20,14 @@ title = "Chaveiro Mineirão"
 <section class="contact-informations">
     <div class="contact-section">
         <h2>Telefones</h2>
-        <p class="contact-phone">
-            <a class="btn btn-phone" href="">(31) 99468-0534</a>
-        </p>
-        <p class="contact-phone">
-            <a class="btn btn-phone" href="">(31) 99468-0534</a>
-        </p>
-        <p class="contact-phone">
-            <a class="btn btn-phone" href="">(31) 99468-0534</a><br>
-        </p>
+        {% for unit in units.units %}
+            {% for c in unit.contacts %}
+                <p class="contact-phone">
+                    <a class="btn btn-phone" href="tel:0{{ c.value|replace({'(': '', ')': '', ' ': '', '-': ''}) }}">{{ c.value }}</a>
+                </p>
+            {% endfor %}
+        {% endfor %}
+
     </div>
     <div class="contact-section">
         <h2>Endereço</h2>
