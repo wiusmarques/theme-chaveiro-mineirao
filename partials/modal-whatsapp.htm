@@ -1,7 +1,13 @@
 ==
+
+{% set phoneDestiny = 5531971838579 %}
+
 <div class="modal_whatsapp-background d-none" id="modal-whatsapp-close">
-    <div class="modal_whatsapp" id="modal_whatsapp">
-        <form action="">
+    <div class="modal_whatsapp" id="modal_whatsapp" style="max-height: 299px;">
+        <form class="default-form" action="">
+            <input type="hidden" name="MEIO_CAPTACAO" value="form-whatsapp-site">
+            <input type="hidden" name="PHONE_DESTINY" value="{{ phoneDestiny }}">
+
             <div class="whatsapp-header">
                 <div class="whatsapp-image">
                     <img height="47" width="47" src="{{ 'assets/img/whatsapp-logo.png'|theme }}" alt="Image">
@@ -10,16 +16,16 @@
                 <div class="whatsapp-close_icon"><img id="button-whatsapp-close" height="16" width="16" src="{{ 'assets/img/close-modal-whatsapp.png'|theme }}" alt="Image"></div>
             </div>
             <div class="input-form">
-                <input type="text" placeholder="Nome" name="name" required>
+                <input type="text" placeholder="Nome" name="NAME" required>
+            </div>
+            {#<div class="input-form">
+                <input type="text" placeholder="Telefone" name="PHONE_NUMBER" required>
             </div>
             <div class="input-form">
-                <input type="text" placeholder="Telefone" name="phone_number" required>
-            </div>
+                <input type="email" placeholder="E-mail" name="EMAIL" required>
+            </div>#}
             <div class="input-form">
-                <input type="email" placeholder="E-mail" name="email" required>
-            </div>
-            <div class="input-form">
-                <input type="text" placeholder="Mensagem" name="message" required>
+                <input type="text" placeholder="Mensagem" name="MESSAGE" required>
             </div>
             <div class="buton_submit_form">
                 <button type="submit" name="message">Enviar Mensagem</button>
