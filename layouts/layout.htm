@@ -59,24 +59,27 @@
             this.getMap(self.defaults.latitude, self.defaults.longitude);
         },
 
-        getMap: function (lat, long) {
+        getMap: function (lat, log) {
             
-            var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
-            var isIphone = navigator.userAgent.indexOf("iPhone") != -1 ;
-            
-            if (isAndroid) {
-                alert("Android");
-            }
-            if (isIphone) {
-                alert("IOS");
+            let isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+            let isIphone = navigator.userAgent.indexOf("iPhone") != -1 ;
+            let map = "http://maps.apple.com/?daddr=" + lat + ", " + log;
+            let btnMaps = document.getElementsByClassName("btn-map");
+
+            if(isIphone){
+                map = "http://maps.apple.com/?daddr=" + lat + ", " + log;
             }
 
-            alert("unknown");
+            for(let btn of btnMaps){
+                btn.addEventListener('click', function(){
+                    window.open(map)
+                });
+            }
         },
 
 
     }
-    APP.defaults.latitude = 19.8215706;
+    APP.defaults.latitude = -19.8215706;
     APP.defaults.longitude = -43.9658104;
     APP.init();
 </script>
