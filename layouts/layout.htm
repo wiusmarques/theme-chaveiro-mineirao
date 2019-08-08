@@ -63,11 +63,11 @@
             
             let isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
             let isIphone = navigator.userAgent.indexOf("iPhone") != -1 ;
-            let map = "http://maps.apple.com/?daddr=" + lat + ", " + log;
+            let map = "http://maps.apple.com/?daddr=" + lat + "," + log;
             let btnMaps = document.getElementsByClassName("btn-map");
 
             if(isIphone){
-                map = "http://maps.apple.com/?daddr=" + lat + ", " + log;
+                map = "http://maps.apple.com/?daddr=" + lat + "," + log;
             }
 
             for(let btn of btnMaps){
