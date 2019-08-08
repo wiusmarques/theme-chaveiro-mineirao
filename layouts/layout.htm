@@ -61,10 +61,10 @@
 
         getMap: function (lat, log) {
             
-            let isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
-            let isIphone = navigator.userAgent.indexOf("iPhone") != -1 ;
+            var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+            var isIphone = navigator.userAgent.indexOf("iPhone") != -1 ;
             var map = "http://maps.apple.com/?daddr=" + lat + "," + log;
-            let btnMaps = document.getElementsByClassName("btn-map");
+            var btnMaps = document.getElementsByClassName("btn-map");
 
             if(isIphone){
                 
@@ -73,7 +73,7 @@
                 window.open(map)
             }
 
-            for(let btn of btnMaps){
+            for(var btn of btnMaps){
                 btn.addEventListener('click', function(){
                     alert("Abrindo o mapa: " + map);
                     //window.open(map)
