@@ -67,11 +67,14 @@
             let btnMaps = document.getElementsByClassName("btn-map");
 
             if(isIphone){
+                
                 map = "http://maps.apple.com/?daddr=" + lat + "," + log;
+                alert("UR: " + map);
             }
 
             for(let btn of btnMaps){
                 btn.addEventListener('click', function(){
+                    alert("Abrindo o mapa: " + map);
                     window.open(map)
                 });
             }
