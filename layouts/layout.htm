@@ -61,22 +61,19 @@
 
         getMap: function (lat, log) {
             
-            var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
-            var isIphone = navigator.userAgent.indexOf("iPhone") != -1 ;
-            var map = "http://maps.apple.com/?daddr=" + lat + "," + log;
-            var btnMaps = document.getElementsByClassName("btn-map");
+            let isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+            let isIphone = navigator.userAgent.indexOf("iPhone") != -1 ;
+            let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+            let map = "http://maps.apple.com/?daddr=" + lat + "," + log;
+            let btnMaps = document.getElementsByClassName("btn-map");
 
             if(isIphone){
-                
                 map = "http://maps.apple.com/?daddr=" + lat + "," + log;
-                alert("UR: " + map);
-                window.open(map)
             }
 
-            for(var btn of btnMaps){
-                btn.addEventListener('click', function(){
-                    alert("Abrindo o mapa: " + map);
-                    //window.open(map)
+            for(let btn of btnMaps){
+                btn.addEventListener(touchEvent, function(){
+                    window.open(map)
                 });
             }
         },
