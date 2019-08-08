@@ -61,9 +61,6 @@
             }
         },
 
-        addEventSumit: function(btn){
-
-        }
     }
     console.log("Iniciando tarefas...")
     return DefaultForms.init();

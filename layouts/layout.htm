@@ -2,17 +2,18 @@
 ==
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google-site-verification" content="_BIrbfQt5RYn8yXaiGmchFGRvi3CW9MxSK5aPQYmFLE" />
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    
+
     {% if this.page.id == 'produtos' %}
-        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     {% endif %}
-    
+
     {# Inserção do estilo específico de cada página #}
     {% set cssPath = "assets/css/" ~ this.page.styleName %}
     <link rel="stylesheet" type="text/css" href="{{ cssPath |theme }}">
@@ -21,15 +22,16 @@
     <link rel="stylesheet" type="text/css" href="{{ 'assets/css/common.min.css?v=1.0.0'|theme }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/css/swiper-4.5.min.css?v=1.0.0'|theme }}">
     <link rel="shortcut icon" href="{{ 'assets/img/key-logo.png'|theme }}" />
-    
+
     <title>{{ this.page.title }}</title>
 </head>
+
 <body>
 
     {% partial 'header' %}
     <main>
         {% page %}
-    </main> 
+    </main>
 
     {% partial 'modal-whatsapp' %}
 
@@ -41,4 +43,42 @@
 <script src="{{ 'assets/js/swiper-4.5.0.min.js?v=1.0.0'|theme }}"></script>
 <script src="{{ 'assets/js/common.min.js?v=1.0.0'|theme }}"></script>
 <script src="{{ 'assets/js/custom.js?v=1.0.0'|theme }}"></script>
+
+<script>
+    var APP = {
+
+        defaults: {
+            latitude: null,
+            longitude: null,
+            
+
+        },
+
+        init: function(){
+            var self = this;
+            this.getMap(self.defaults.latitude, self.defaults.longitude);
+        },
+
+        getMap: function (lat, long) {
+            
+            var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+            var isIphone = navigator.userAgent.indexOf("iPhone") != -1 ;
+            
+            if (isAndroid) {
+                alert("Android");
+            }
+            if (isIphone) {
+                alert("IOS");
+            }
+
+            alert("unknown");
+        },
+
+
+    }
+    APP.defaults.latitude = 19.8215706;
+    APP.defaults.longitude = -43.9658104;
+    APP.init();
+</script>
+
 </html>
