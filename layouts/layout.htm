@@ -65,15 +65,15 @@
             let isIphone = navigator.userAgent.indexOf("iPhone") != -1 ;
             let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
             let map = "http://maps.apple.com/?daddr=" + lat + "," + log;
-            let btnMaps = document.getElementsByClassName("btn-map");
+            let as = document.getElementsByClassName("btn-map");
 
             if(isIphone){
                 map = "http://maps.apple.com/?daddr=" + lat + "," + log;
             }
 
-            for(let btn of btnMaps){
+            for(let a of as){
                 btn.addEventListener(touchEvent, function(){
-                    window.open(map)
+                    a.href = map;
                 });
             }
         },
