@@ -60,10 +60,8 @@
         },
 
         getMap: function (lat, log) {
-            
-            let isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+
             let isIphone = navigator.userAgent.indexOf("iPhone") != -1 ;
-            let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
             let map = "http://maps.apple.com/?daddr=" + lat + "," + log;
             let as = document.getElementsByClassName("btn-map");
 
