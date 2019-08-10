@@ -4,37 +4,60 @@
 
 <div class="modal_whatsapp-background d-none" id="modal-whatsapp-close">
     <div class="modal_whatsapp" id="modal_whatsapp" style="max-height: 299px;">
-        <form class="default-form" action="">
-            <input type="hidden" name="MEIO_CAPTACAO" value="form-whatsapp-site">
+        <form action="" class="default-form">
+            <input name="MEIO_CAPTACAO" type="hidden" value="form-whatsapp-site">
             <input type="hidden" name="PHONE_DESTINY" value="{{ phoneDestiny }}">
 
             <div class="whatsapp-header">
                 <div class="whatsapp-image">
                     <img height="47" width="47" src="{{ 'assets/img/whatsapp-logo.png'|theme }}" alt="Image">
                 </div>
-                <div class="whatsapp-title"><span>Envie uma mensagem</span></div>
+                <div class="whatsapp-title">
+                    <span>Envie uma mensagem</span>
+                </div>
                 <div class="whatsapp-close_icon"><img id="button-whatsapp-close" height="16" width="16" src="{{ 'assets/img/close-modal-whatsapp.png'|theme }}" alt="Image"></div>
             </div>
             <div class="input-form">
-                <input type="text" placeholder="Nome" name="NAME" required>
+                <input name="NAME" placeholder="Nome" required type="text">
             </div>
-            {#<div class="input-form">
-                <input type="text" placeholder="Telefone" name="PHONE_NUMBER" required>
-            </div>
+            {% if this.page.id == "produtos" %}
+                <div class="input-form">
+                    <select name="PRODUCT">
+                        <option value="">Produtos</option>
+                        {% if products.products|length > 0%}
+                            {% for product in products.products %}
+                                <option value="{{ product.name }}">{{ product.name }}</option>
+                            {% endfor %}
+                        {% else %}
+                            <option value="Produtos Indispiníveis">Produtos Indispiníveis</option>
+                        {% endif %}
+                    </select>
+                </div>
+            
+            {% elseif this.page.id == "servicos" %}
+                <div class="input-form">
+                    <select name="PRODUCT">
+                        <option value="">Serviços</option>
+                        {% if services.services|length > 0 %}
+                            {% for s in services.services %}
+                                <option value="{{ s.name }}">{{ s.name }}</option>
+                            {% endfor %}
+                        {% else %}
+                            <option value="Serviços Indisponíveis">Serviços Indispiníveis</option>
+                        {% endif %}
+                    </select>
+                </div>
+            {% endif %}
+
             <div class="input-form">
-                <input type="email" placeholder="E-mail" name="EMAIL" required>
-            </div>#}
-            <div class="input-form">
-                <input type="text" placeholder="Mensagem" name="MESSAGE" required>
+                <input name="MESSAGE" placeholder="Mensagem" required type="text">
             </div>
             <div class="buton_submit_form">
-                <button type="submit" name="message">Enviar Mensagem</button>
+                <button type="submit">Enviar Mensagem</button>
             </div>
         </form>
-    
+
     </div>
 </div>
 
-<div class="whatsapp-button" id="whatsapp-button" style="background-image: url({{ 'assets/img/whatsapp_icon.svg'|theme }})">
-
-</div>
+<div class="whatsapp-button whatsapp-button-action" style="background-image: url({{ 'assets/img/whatsapp_icon.svg'|theme }})"></div>

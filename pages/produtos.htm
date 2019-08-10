@@ -42,7 +42,7 @@ title = "Promoções e Produtos Chaveiro Mineirao"
 
                                 <p class="card-product_price"><span>Por apenas </span>R${{ product.value }}</p>
                             </div>
-                            <button type="button" class="card-product_button">COMPRAR</button>
+                            <button type="button" class="card-product_button btn-buy whatsapp-button-action" data-name="{{ product.name }}">COMPRAR</button>
                         </div>
                         {% endfor %}
                     </div>
@@ -53,3 +53,36 @@ title = "Promoções e Produtos Chaveiro Mineirao"
             </div>
         </div>
 </section>
+
+<script>
+
+(function(){
+    PRODUCTS = {
+        
+        init: function(){
+            this.addEventBuy();
+        },
+
+        addEventBuy: function(){
+            let btnBuy = document.getElementsByClassName("btn-buy")
+
+            for(let btn of btnBuy){
+                let product = btn.getAttribute("data-name");
+
+                btn.addEventListener('click', function(){
+                    var els = document.getElementsByName("PRODUCT");
+                    
+                    for(let e of els){
+                        e.value = product;
+                    }
+                })
+            }
+           
+        }
+
+    }
+
+    PRODUCTS.init();
+}());
+
+</script>
