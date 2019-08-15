@@ -17,15 +17,10 @@ title = "Sobre nós, Chaveiro Mineirão"
                 <img width="375px" src="{{ 'assets/img/interior-1.jpg'|theme }}" alt="">
             </div>
             <div class="about-description">
-                <h2>Um pouco da nossa história</h2>
-                
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sequi hic dignissimos ab eos iure eveniet, earum saepe blanditiis suscipit dolores, ratione, a et obcaecati odit dicta rerum itaque voluptatum.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sequi hic dignissimos ab eos iure eveniet, earum saepe blanditiis suscipit dolores, ratione, a et obcaecati odit dicta rerum itaque voluptatum.</p>
-                
-                <h2>Qualidade e compromisso</h2>
-                
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sequi hic dignissimos ab eos iure eveniet, earum saepe blanditiis suscipit dolores, ratione, a et obcaecati odit dicta rerum itaque voluptatum.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sequi hic dignissimos ab eos iure eveniet, earum saepe blanditiis suscipit dolores, ratione, a et obcaecati odit dicta rerum itaque voluptatum.</p>
+                <h2>{{ 'Um pouco da nossa história'|contenttext('Site | Sobre', true, 'Título do primeiro bloco de texto') }}</h2>
+                {{ 'Lorem ipsum dolor A'|contenttext('Site | Sobre', true, 'Descrição do primeiro bloco de texto') }}
+                <h2>{{ 'Qualidade e compromisso'|contenttext('Site | Sobre', true, 'Título do segundo bloco de texto') }}</h2>
+                {{ 'Lorem ipsum dolor B'|contenttext('Site | Sobre', true, 'Descrição do segundo bloco de texto') }}
             </div>
         </div>
     </div>
