@@ -24,7 +24,7 @@
         <div class="footer-extras-item">
             <h3>{{ 'Onde estamos'|contenttext('Site | Footer', true, 'Título do mapa') }}</h3>
             {% if this.page.id == "home" %}
-            <a href="{{ 'contato'|page }}">
+            <a href="{{ 'contato'|page }}" aria-label="Você será redirecionado para a página de contato">
                 <img src="{{ 'assets/img/map_fake.jpg'|theme }}" alt="">
             </a>
             {% else %}
