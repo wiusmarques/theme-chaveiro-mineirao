@@ -36,7 +36,7 @@ title = "Promoções e Produtos Chaveiro Mineirao"
                                 <p class="card-product_name">{{ product.name }}</p>
                             </div>
                             <div class="card-image">
-                                <img src="{{ product.primary_image.getThumb(162,250) }}" alt="">
+                                <img src="{{ product.primary_image.thumb(250,250,{'mode':'crop'}) }}" alt="">
                             </div>
                             <div class="card-product_information">
 
