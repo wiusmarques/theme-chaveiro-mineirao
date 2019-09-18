@@ -20,6 +20,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google-site-verification" content="_BIrbfQt5RYn8yXaiGmchFGRvi3CW9MxSK5aPQYmFLE" />
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    
+    {% if this.page.description %}
+        <meta name="description" content="{{ this.page.description }}">
+    {% endif %}
 
     {% if this.page.id == 'produtos' %}
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
