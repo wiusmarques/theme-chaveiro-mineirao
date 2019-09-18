@@ -37,7 +37,7 @@
             
             {% elseif this.page.id == "servicos" %}
                 <div class="input-form">
-                    <select name="SERVICE">
+                    <select name="SERVICE" required>
                         <option value="">Serviços</option>
                         {% if services.services|length > 0 %}
                             {% for s in services.services %}
