@@ -21,6 +21,13 @@
     <meta name="google-site-verification" content="_BIrbfQt5RYn8yXaiGmchFGRvi3CW9MxSK5aPQYmFLE" />
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     
+    <link rel="canonical" href="{{ this.page.urlCanonical }}" />
+
+    <meta property="og:title" content="{{ this.page.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ this.page.urlCanonical }}" />
+    <meta property="og:image" content="{{ 'assets/img/interior-1.jpg'|theme }}" />
+    
     {% if this.page.description %}
         <meta name="description" content="{{ this.page.description }}">
     {% endif %}
